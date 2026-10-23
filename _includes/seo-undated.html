@@ -1,0 +1,18 @@
+{%- comment -%}
+  The tags jekyll-seo-tag writes for a post, minus its publish and modified
+  dates.
+{%- endcomment -%}
+{%- assign seo_description = page.description | default: page.excerpt | strip_html | normalize_whitespace | truncate: 200 -%}
+<title>{{ page.title | escape }} | {{ site.title | escape }}</title>
+<meta property="og:title" content="{{ page.title | escape }}" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="{{ seo_description | escape }}" />
+<meta name="twitter:description" property="og:description" content="{{ seo_description | escape }}" />
+<link rel="canonical" href="{{ page.url | absolute_url }}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:site_name" content="{{ site.title | escape }}" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ page.title | escape }}" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","description":{{ seo_description | jsonify }},"headline":{{ page.title | jsonify }},"mainEntityOfPage":{"@type":"WebPage","@id":{{ page.url | absolute_url | jsonify }}},"url":{{ page.url | absolute_url | jsonify }}}</script>

@@ -1,0 +1,17 @@
+---
+layout: default
+title: Dev
+permalink: /dev/
+---
+
+<h1>Dev</h1>
+<p>Software engineering notes.</p>
+
+<ul>
+  {% for post in site.dev %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+  </li>
+  {% endfor %}
+</ul>

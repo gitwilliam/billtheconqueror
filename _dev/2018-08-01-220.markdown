@@ -1,0 +1,14 @@
+---
+title: "Streams and Lambdas in 'Effective Java'"
+date: 2018-08-01 18:52:19
+---
+
+![](/assets/images/dev/canva-stream-flowing-through-forest.jpg)
+
+[Here](https://www.infoq.com/presentations/effective-java-third-edition) is a good talk by Joshua Bloch.  Among other things, he touches on best practices for the use of streams and lambdas in Java 8+.  It has the following outline:
+
+	- Prefer lambdas to anonymous classes
+	- Prefer method references to lambdas
+	- Favor standard functional interfaces
+	- Use streams juidiciously
+	- Use caution when making streams parallel

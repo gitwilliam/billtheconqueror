@@ -1,0 +1,19 @@
+---
+layout: default
+title: Thoughts and Reflections
+permalink: /blog/
+redirect_from:
+  - /notes/
+---
+
+<h1>Thoughts and Reflections</h1>
+
+<ul>
+  {%- comment -%} Posts carry no dates, so `order` sets their sequence. {%- endcomment -%}
+  {% assign notes = site.notes | sort: "order" %}
+  {% for post in notes %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>

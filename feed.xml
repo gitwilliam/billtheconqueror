@@ -1,0 +1,18 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  Stands in for jekyll-feed's feed (minima loads the plugin), whose <updated>
+  stamp would reveal when the site was last built. The plugin only feeds
+  _posts, which this site doesn't use, so it never listed anything. RSS, unlike
+  Atom, doesn't require a date.
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <link>{{ "/" | absolute_url }}</link>
+    <description>{{ site.description | xml_escape }}</description>
+  </channel>
+</rss>

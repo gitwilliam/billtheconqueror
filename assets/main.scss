@@ -1,0 +1,50 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+// ESV CrossReference Tool sets an inline color; match the theme's links instead.
+a.esv-crossref-link {
+  color: $brand-color !important;
+
+  &:visited {
+    color: darken($brand-color, 15%) !important;
+  }
+}
+
+// Half-width post images; full width on phones, where half would be too small.
+.post-content img.image-half {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+
+  @include media-query($on-palm) {
+    width: 100%;
+  }
+}
+
+// An image with its caption in one paragraph, centered, with smaller caption text.
+.post-content p.figure {
+  text-align: center;
+  font-size: $small-font-size;
+  color: $grey-color-dark;
+}
+
+// Set footnotes apart from the post body under a "Notes" heading.
+.post-content .footnotes {
+  margin-top: $spacing-unit;
+  padding-top: $spacing-unit / 2;
+  border-top: 1px solid $grey-color-light;
+  font-size: $small-font-size;
+  color: $grey-color-dark;
+
+  &::before {
+    content: "Notes";
+    display: block;
+    margin-bottom: $spacing-unit / 2;
+    font-size: $base-font-size * 1.125;
+    font-weight: bold;
+    color: $text-color;
+  }
+}

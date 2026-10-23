@@ -1,0 +1,49 @@
+title: Bill the Conqueror
+description: >-
+  Notes on software and faith from Bill.
+baseurl: ""
+url: "https://billtheconqueror.com"
+
+theme: minima
+
+collections:
+  dev:
+    output: true
+    permalink: /dev/:year/:month/:day/:title/
+  notes:
+    output: true
+    # Undated, so readers can't tell when a post was written.
+    permalink: /blog/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "dev"
+    values:
+      layout: post
+      section: dev
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: post
+      section: notes
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+# Don't publish a list of redirects; it would pair each post with its old, dated URL.
+redirect_from:
+  json: false
+
+# Cache-busting version for the stylesheet, scripts and their data; bump it when
+# they change. (A build timestamp would reveal when the site was last updated.)
+asset_version: 1
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts
